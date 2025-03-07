@@ -1,0 +1,564 @@
+[
+    {
+      "model": "recipes.recipe",
+      "pk": 1,
+      "fields": {
+        "author": 2,
+        "name": "Спагетти с креветками и чесноком",
+        "image": "recipes/spaghetti_shrimp_garlic.jpeg",
+        "text": "Простое и вкусное блюдо с ароматом чеснока и свежей зеленью.",
+        "cooking_time": 20
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 1,
+      "fields": {
+        "recipe": 1,
+        "ingredient": 189,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 2,
+      "fields": {
+        "recipe": 1,
+        "ingredient": 727,
+        "amount": 150
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 3,
+      "fields": {
+        "recipe": 1,
+        "ingredient": 680,
+        "amount": 3
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 4,
+      "fields": {
+        "recipe": 1,
+        "ingredient": 423,
+        "amount": 30
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 5,
+      "fields": {
+        "recipe": 1,
+        "ingredient": 436,
+        "amount": 50
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 2,
+      "fields": {
+        "author": 2,
+        "name": "Салат с авокадо и креветками",
+        "image": "recipes/avocado_shrimp_salad.jpeg",
+        "text": "Легкий и освежающий салат с авокадо и креветками, заправленный оливковым маслом и лимонным соком.",
+        "cooking_time": 15
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 6,
+      "fields": {
+        "recipe": 2,
+        "ingredient": 7,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 7,
+      "fields": {
+        "recipe": 2,
+        "ingredient": 727,
+        "amount": 100
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 8,
+      "fields": {
+        "recipe": 2,
+        "ingredient": 435,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 9,
+      "fields": {
+        "recipe": 2,
+        "ingredient": 423,
+        "amount": 20
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 10,
+      "fields": {
+        "recipe": 2,
+        "ingredient": 340,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 3,
+      "fields": {
+        "author": 3,
+        "name": "Тыквенный суп с имбирем",
+        "image": "recipes/pumpkin_ginger_soup.jpeg",
+        "text": "Ароматный суп с тыквой, имбирем и кокосовым молоком, который согреет в холодный день.",
+        "cooking_time": 30
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 11,
+      "fields": {
+        "recipe": 3,
+        "ingredient": 9,
+        "amount": 500
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 12,
+      "fields": {
+        "recipe": 3,
+        "ingredient": 463,
+        "amount": 20
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 13,
+      "fields": {
+        "recipe": 3,
+        "ingredient": 648,
+        "amount": 400
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 14,
+      "fields": {
+        "recipe": 3,
+        "ingredient": 679,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 15,
+      "fields": {
+        "recipe": 3,
+        "ingredient": 726,
+        "amount": 5
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 4,
+      "fields": {
+        "author": 4,
+        "name": "Пицца с грибами и шпинатом",
+        "image": "recipes/mushroom_spinach_pizza.jpeg",
+        "text": "Вегетарианская пицца с грибами, шпинатом и сыром моцарелла.",
+        "cooking_time": 25
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 16,
+      "fields": {
+        "recipe": 4,
+        "ingredient": 13,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 17,
+      "fields": {
+        "recipe": 4,
+        "ingredient": 353,
+        "amount": 100
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 18,
+      "fields": {
+        "recipe": 4,
+        "ingredient": 354,
+        "amount": 150
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 19,
+      "fields": {
+        "recipe": 4,
+        "ingredient": 14,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 20,
+      "fields": {
+        "recipe": 4,
+        "ingredient": 15,
+        "amount": 100
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 5,
+      "fields": {
+        "author": 2,
+        "name": "Шоколадный мусс",
+        "image": "recipes/chocolate_mousse.jpeg",
+        "text": "Нежный шоколадный мусс с насыщенным вкусом.",
+        "cooking_time": 20
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 21,
+      "fields": {
+        "recipe": 5,
+        "ingredient": 17,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 22,
+      "fields": {
+        "recipe": 5,
+        "ingredient": 37,
+        "amount": 300
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 23,
+      "fields": {
+        "recipe": 5,
+        "ingredient": 33,
+        "amount": 2
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 24,
+      "fields": {
+        "recipe": 5,
+        "ingredient": 276,
+        "amount": 100
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 6,
+      "fields": {
+        "author": 2,
+        "name": "Греческий салат с курицей",
+        "image": "recipes/greek_chicken_salad.jpeg",
+        "text": "Салат с курицей, помидорами, огурцами, оливками и сыром фета.",
+        "cooking_time": 15
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 25,
+      "fields": {
+        "recipe": 6,
+        "ingredient": 784,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 26,
+      "fields": {
+        "recipe": 6,
+        "ingredient": 21,
+        "amount": 2
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 27,
+      "fields": {
+        "recipe": 6,
+        "ingredient": 22,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 28,
+      "fields": {
+        "recipe": 6,
+        "ingredient": 23,
+        "amount": 50
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 29,
+      "fields": {
+        "recipe": 6,
+        "ingredient": 24,
+        "amount": 100
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 7,
+      "fields": {
+        "author": 3,
+        "name": "Паста с лососем и сливочным соусом",
+        "image": "recipes/salmon_pasta.jpeg",
+        "text": "Паста с нежным лососем и сливочным соусом, украшенная свежим укропом.",
+        "cooking_time": 30
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 30,
+      "fields": {
+        "recipe": 7,
+        "ingredient": 189,
+        "amount": 300
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 31,
+      "fields": {
+        "recipe": 7,
+        "ingredient": 301,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 32,
+      "fields": {
+        "recipe": 7,
+        "ingredient": 37,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 33,
+      "fields": {
+        "recipe": 7,
+        "ingredient": 679,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 34,
+      "fields": {
+        "recipe": 7,
+        "ingredient": 436,
+        "amount": 50
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 8,
+      "fields": {
+        "author": 4,
+        "name": "Курица в медово-горчичном соусе",
+        "image": "recipes/honey_mustard_chicken.jpeg",
+        "text": "Курица в сладком и пикантном медово-горчичном соусе.",
+        "cooking_time": 35
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 35,
+      "fields": {
+        "recipe": 8,
+        "ingredient": 784,
+        "amount": 400
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 36,
+      "fields": {
+        "recipe": 8,
+        "ingredient": 330,
+        "amount": 50
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 37,
+      "fields": {
+        "recipe": 8,
+        "ingredient": 314,
+        "amount": 20
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 38,
+      "fields": {
+        "recipe": 8,
+        "ingredient": 680,
+        "amount": 3
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 39,
+      "fields": {
+        "recipe": 8,
+        "ingredient": 423,
+        "amount": 30
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 9,
+      "fields": {
+        "author": 3,
+        "name": "Омлет с шампиньонами",
+        "image": "recipes/mushroom_omelette.jpeg",
+        "text": "Омлет с шампиньонами, луком и свежей зеленью.",
+        "cooking_time": 15
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 40,
+      "fields": {
+        "recipe": 9,
+        "ingredient": 33,
+        "amount": 4
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 41,
+      "fields": {
+        "recipe": 9,
+        "ingredient": 354,
+        "amount": 150
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 42,
+      "fields": {
+        "recipe": 9,
+        "ingredient": 679,
+        "amount": 1
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 43,
+      "fields": {
+        "recipe": 9,
+        "ingredient": 37,
+        "amount": 100
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 44,
+      "fields": {
+        "recipe": 9,
+        "ingredient": 436,
+        "amount": 50
+      }
+    },
+    {
+      "model": "recipes.recipe",
+      "pk": 10,
+      "fields": {
+        "author": 2,
+        "name": "Тирамису",
+        "image": "recipes/tiramisu.jpeg",
+        "text": "Классический итальянский десерт с кофейным вкусом.",
+        "cooking_time": 120
+        
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 45,
+      "fields": {
+        "recipe": 10,
+        "ingredient": 126,
+        "amount": 20
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 46,
+      "fields": {
+        "recipe": 10,
+        "ingredient": 37,
+        "amount": 500
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 47,
+      "fields": {
+        "recipe": 10,
+        "ingredient": 694,
+        "amount": 200
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 48,
+      "fields": {
+        "recipe": 10,
+        "ingredient": 498,
+        "amount": 50
+      }
+    },
+    {
+      "model": "recipes.recipeingredient",
+      "pk": 49,
+      "fields": {
+        "recipe": 10,
+        "ingredient": 276,
+        "amount": 100
+      }
+    }
+  ]
+  

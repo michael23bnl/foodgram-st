@@ -1,0 +1,62 @@
+[
+    {
+      "model": "users.user",
+      "pk": 1,
+      "fields": {
+        "username": "admin",
+        "email": "admin@admin.com",
+        "password": "pbkdf2_sha256$600000$tT0fN7l0QcU88kCgWylgTC$/D8yHxSG12uqac0A2nqKDg1rMuLGjXs6QCfO/G9e9kM=",  
+        "is_active": true,
+        "is_staff": true,
+        "is_superuser": true,
+        "first_name": "Админ",
+        "last_name": "Админов",
+        "avatar": "avatars/admin.jpeg"
+      }
+    },
+    {
+      "model": "users.user",
+      "pk": 2,
+      "fields": {
+        "username": "user1",
+        "email": "user1@user.com",
+        "password": "pbkdf2_sha256$600000$cfPcXOHIIcA6Jy7uBysyFW$7jc8FjlMRxonCUM7/y9RgGSXbyWEaU2fvaGWDgPzf0U=",  
+        "is_active": true,
+        "is_staff": false,
+        "is_superuser": false,
+        "first_name": "Иван",
+        "last_name": "Иванов",
+        "avatar": "avatars/user1.jpeg"
+      }
+    },
+    {
+      "model": "users.user",
+      "pk": 3,
+      "fields": {
+        "username": "user2",
+        "email": "user2@user.com",
+        "password": "pbkdf2_sha256$600000$FSoYezW0hTJyU1Q7Yp3tbc$5VmXCf+jUg+Sbo+bPMMBQY5vFg/45zIIqEKxqAkP150=",
+        "is_active": true,
+        "is_staff": false,
+        "is_superuser": false,
+        "first_name": "Пётр",
+        "last_name": "Стариков",
+        "avatar": "avatars/user2.jpeg"
+      }
+    },
+    {
+      "model": "users.user",
+      "pk": 4,
+      "fields": {
+        "username": "user3",
+        "email": "user3@user.com",
+        "password": "pbkdf2_sha256$600000$DZ3KUfTr5bXknAIZ9eM6Qs$xeHFIFjCjl385MXT95TlUL1cefyPcdjsBCfKO6N2nZU=",
+        "is_active": true,
+        "is_staff": false,
+        "is_superuser": false,
+        "first_name": "Алексей",
+        "last_name": "Сидоров",
+        "avatar": "avatars/user3.jpeg"
+      }
+    }
+  ]
