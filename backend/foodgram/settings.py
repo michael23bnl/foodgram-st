@@ -95,7 +95,7 @@ DATABASES = {
         'NAME': 'foodgram',
         'USER': 'foodgram_user',
         'PASSWORD': 'foodgram_password',
-        'HOST': 'localhost',
+        'HOST': 'postgres',
         'PORT': '5432',
     }
 }
