@@ -41,16 +41,23 @@ class RecipeSerializer(slz.ModelSerializer):
 
     def get_is_favorited(self, obj):
         user = self.context.get('request').user
-        return user.is_authenticated and obj.favorited_by.filter(user=user).exists()
+        return (
+            user.is_authenticated
+            and obj.favorited_by.filter(user=user).exists()
+        )
 
     def get_is_in_shopping_cart(self, obj):
         user = self.context.get('request').user
-        return user.is_authenticated and obj.in_shopping_cart.filter(user=user).exists()
+        return (
+            user.is_authenticated
+            and obj.in_shopping_cart.filter(user=user).exists()
+        )
 
     def get_is_subscribed(self, obj):
         request = self.context.get('request')
         if request and request.user.is_authenticated:
-            return Follow.objects.filter(user=request.user, following=obj).exists()
+            return Follow.objects.filter(user=request.user,
+                                         following=obj).exists()
         return False
 
     def get_author(self, obj):
@@ -162,16 +169,26 @@ class UserSerializer(slz.ModelSerializer):
         return None
 
     def validate_username(self, value):
-        if self.instance and User.objects.filter(username=value).exclude(pk=self.instance.pk).exists():
+        if (
+            self.instance
+            and User.objects.filter(username=value)
+            .exclude(pk=self.instance.pk).exists()
+        ):
             raise slz.ValidationError(
                 "Пользователь с таким именем уже существует.")
-        elif not self.instance and User.objects.filter(username=value).exists():
+        elif not (
+            self.instance and User.objects.filter(username=value).exists()
+        ):
             raise slz.ValidationError(
                 "Пользователь с таким именем уже существует.")
         return value
 
     def validate_email(self, value):
-        if self.instance and User.objects.filter(email=value).exclude(pk=self.instance.pk).exists():
+        if (
+            self.instance
+            and User.objects.filter(email=value)
+            .exclude(pk=self.instance.pk).exists()
+        ):
             raise slz.ValidationError(
                 "Пользователь с таким email уже существует.")
         elif not self.instance and User.objects.filter(email=value).exists():
@@ -247,7 +264,8 @@ class FollowSerializer(slz.ModelSerializer):
     def get_is_subscribed(self, obj):
         request = self.context.get('request')
         if request and request.user.is_authenticated:
-            return Follow.objects.filter(user=request.user, following=obj).exists()
+            return (Follow.objects.filter(user=request.user, following=obj)
+                    .exists())
         return False
 
     def get_recipes(self, obj):
@@ -260,7 +278,8 @@ class FollowSerializer(slz.ModelSerializer):
         if recipes_limit and recipes_limit.isdigit():
             recipes = recipes[:int(recipes_limit)]
 
-        return ShortRecipeSerializer(recipes, many=True, context=self.context).data
+        return (ShortRecipeSerializer(recipes, many=True, context=self.context)
+                .data)
 
     def get_recipes_count(self, obj):
         return Recipe.objects.filter(author=obj).count()
