@@ -3,7 +3,10 @@ import base64
 from django.core.files.base import ContentFile
 
 
-BASE62_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+BASE62_ALPHABET = (
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+)
 
 
 class Base64ImageField(slz.ImageField):
