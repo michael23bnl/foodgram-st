@@ -1,14 +1,10 @@
-from django.shortcuts import render
 from rest_framework import filters, permissions, viewsets, mixins, viewsets, permissions, status
 from rest_framework.generics import get_object_or_404
-from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.decorators import action
 import api.serializers as sl
 from collections import defaultdict
-from recipes.models import Recipe, RecipeIngredient, Ingredient, ShoppingCart
+from recipes.models import Recipe, Ingredient, ShoppingCart
 from users.models import Follow
 from django.contrib.auth import get_user_model
-from rest_framework.response import Response
 from django.core.files.base import ContentFile
 import base64
 import uuid
@@ -16,19 +12,18 @@ from .serializers import UserSerializer, ChangePasswordSerializer, RecipeSeriali
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import update_session_auth_hash
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, permissions
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter
 from io import StringIO
 import csv
 from fpdf import FPDF
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from rest_framework import viewsets, permissions
 from django.http import HttpResponse
-from .serializers import RecipeSerializer
 from .paginations import CustomPagination
 from rest_framework.exceptions import PermissionDenied
+from .services import Base62Field
+from django.shortcuts import redirect
+from django.urls import reverse
 User = get_user_model()
 
 
@@ -145,9 +140,6 @@ class UserViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'], url_path='subscriptions', permission_classes=[permissions.IsAuthenticated])
     def get_subscriptions(self, request):
-        """
-        Возвращает список пользователей, на которых подписан текущий пользователь, с их рецептами.
-        """
         user = request.user
 
         subscriptions = User.objects.filter(following__user=user)
@@ -304,9 +296,25 @@ class RecipeViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=["get"], url_path="get-link")
     def get_link(self, request, pk=None):
         recipe = self.get_object()
-        short_link = f"https://foodgram.example.org/s/{recipe.id}"
+
+        short_code = Base62Field.to_base62(recipe.id)
+
+        short_link = f"http://localhost/s/{short_code}"
 
         return Response({"short-link": short_link}, status=status.HTTP_200_OK)
+
+    def redirect_to_recipe(self, request, short_code=None):
+        try:
+            recipe_id = Base62Field.from_base62(short_code)
+        except ValueError:
+            return Response({"detail": "Неверный короткий код."}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            recipe = Recipe.objects.get(id=recipe_id)
+        except Recipe.DoesNotExist:
+            return Response({"detail": "Рецепт не найден."}, status=status.HTTP_404_NOT_FOUND)
+
+        redirect_url = f"http://localhost/recipes/{recipe.id}/"
+        return redirect(redirect_url)
 
     @action(detail=True, methods=['post', 'delete'], url_path='shopping_cart', permission_classes=[permissions.IsAuthenticated])
     def manage_shopping_cart(self, request, pk=None):

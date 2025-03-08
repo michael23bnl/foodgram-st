@@ -1,26 +1,14 @@
 import rest_framework.serializers as slz
-from rest_framework.validators import UniqueTogetherValidator
-from users.models import User, Follow
+from users.models import Follow
 from recipes.models import Recipe, RecipeIngredient, Ingredient
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
 from djoser.serializers import TokenCreateSerializer
 from django.contrib.auth import authenticate
-import base64
 from rest_framework.exceptions import ValidationError
-from django.core.files.base import ContentFile
+from .services import Base64ImageField
 User = get_user_model()
-
-
-class Base64ImageField(slz.ImageField):
-
-    def to_internal_value(self, data):
-        if isinstance(data, str) and data.startswith('data:image'):
-            format, imgstr = data.split(';base64,')
-            ext = format.split('/')[-1]
-            data = ContentFile(base64.b64decode(imgstr), name=f'temp.{ext}')
-        return super().to_internal_value(data)
 
 
 class RecipeIngredientSerializer(slz.ModelSerializer):
